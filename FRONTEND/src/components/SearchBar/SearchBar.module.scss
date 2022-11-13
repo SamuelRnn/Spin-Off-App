@@ -1,0 +1,47 @@
+@use '../../sass/variables' as *;
+$transition-input: .2s;
+
+.input{
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  position: relative;
+  margin-bottom: 4rem;
+  input, button{
+    height: 100%;
+    width: 100%;
+    border-radius: none;
+    border: none;
+  }
+  input{
+    border-radius: .2rem;
+    border: $light-green 1px solid;
+    outline: none;
+    background: transparent;
+    color: $white;
+    font-size: $font-p;
+    width: 100%;
+    padding: 0 5rem 0 2rem;
+    transition: $transition-input;
+    &::placeholder{
+      color: $white;
+    }
+    &:focus{
+      background-color: $gray;
+    }
+  }
+  button{
+    right: 0;
+    position: absolute;
+    width: 5rem;
+    background: transparent;
+    .search_icon{
+      font-size: 3rem;
+      color: white;
+      transition: $transition-input;
+    }
+    &:hover > .search_icon{
+      color: $light-green;
+    }
+  }
+}

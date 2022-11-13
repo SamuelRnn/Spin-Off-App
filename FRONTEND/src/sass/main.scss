@@ -1,0 +1,23 @@
+@use './variables' as *;
+
+html{
+  font-size: 62.5%;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  padding-top: 10rem;
+  background-color: $black;
+  color: $white;
+  font-family: $font-f-text;
+}
+p{
+  font-size: $font-p;
+}
+a{
+  text-decoration: none;
+  color: $white;
+  display: flex;
+}

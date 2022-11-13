@@ -1,0 +1,52 @@
+@use "../../sass/variables" as *;
+
+.container {
+  z-index: 1000;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  position: fixed;
+  border-bottom: $light-gray 1px solid;
+  background-color: $gray;
+  height: 7.6rem;
+  top: 0;
+  box-shadow: 0 0 20px 15px $black ;
+
+  .nav{
+    height: 100%;
+    width: $main-container-w;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+
+    .links{
+      height: 100%;
+      column-gap: 2.4rem;
+      display: flex;
+      align-items: center;
+
+      .logo{
+        display: flex;
+        align-items: center;
+        border-right: 1px solid $green;
+        border-left: 1px solid $green;
+        height: 40%;
+        padding: 0 10px;
+
+        h1{
+          font-size: $font-h1;
+          font-family: $font-f-alt;
+        }
+      }
+      .left_links{
+        display: flex;
+        align-items: center;
+        column-gap: .3rem;
+      }
+      h2{
+        font-size: $font-links;
+        font-family: $font-f-alt;
+      }
+    }
+  }
+}
