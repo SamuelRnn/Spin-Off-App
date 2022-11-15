@@ -1,4 +1,5 @@
 @use '../../sass/variables.scss' as *;
+@use '../../sass/mixins.scss' as *;
 .container{
   display: flex;
   flex-direction: column;
@@ -12,8 +13,11 @@
     width: min(100rem, 95%);
     margin-bottom: 6.4rem;
     h2{
-      line-height: 1;
-      font-size: 4.8rem;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    h3{
+      font-size: 1.6rem;
       margin-bottom: 2rem;
     }
     p{
@@ -24,5 +28,9 @@
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
     padding-top: 4rem;
+  }
+  a{
+    @include return-btn;
+    margin: 0 auto;
   }
 }

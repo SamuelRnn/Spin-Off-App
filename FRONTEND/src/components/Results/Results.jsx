@@ -32,7 +32,7 @@ function Results({ setHomeSearchDone }) {
             <h2>Resultados para<span>{searchTitle}</span></h2>
             <div></div>
           </div>
-          <h3 className={styles.return} onClick={handleReturn}>Inicio</h3>
+          <h3 className={styles.return} onClick={handleReturn}>Let's go back to the start</h3>
           <ul className={styles.results_container}>
             {
               movies.Search?.map(movie => 

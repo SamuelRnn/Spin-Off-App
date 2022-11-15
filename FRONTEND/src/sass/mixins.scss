@@ -2,6 +2,7 @@
 
 @mixin return-btn {
   font-size: 1.4rem;
+  font-style: italic;
   cursor: pointer;
   transition: .3s ease all;
   &:hover{
