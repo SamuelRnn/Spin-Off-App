@@ -7,15 +7,11 @@ export const FAV_ADD_MOVIE = "FAV_ADD_MOVIE";
 export const SET_SEARCH_TITLE = "SET_SEARCH_TITLE";
 export const RESET_MATCHING_MOVIES = "RESET_MATCHING_MOVIES";
 
+const API_KEY = import.meta.env.VITE_API_KEY
+
 export const getMatchingMovies = (search) => {
   return function(dispatch){
-    // fetch(`http://www.omdbapi.com/?s=${search}&apikey=f2d70180`)
-    //   .then(response => response.json())
-    //   .then(data => dispatch({
-    //     type: GET_MATCHING_MOVIES,
-    //     payload: data
-    //   }));
-    axios.get(`https://www.omdbapi.com/?s=${search}&apikey=f2d70180`)
+    axios.get(`https://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`)
       .then(res => dispatch({
         type: GET_MATCHING_MOVIES,
         payload: res.data

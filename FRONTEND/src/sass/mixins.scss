@@ -1,0 +1,11 @@
+@use './variables.scss' as *;
+
+@mixin return-btn {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: .3s ease all;
+  &:hover{
+    text-shadow: 0px 0px 7px $light-gray;
+    color: $light-green;  
+  }
+}

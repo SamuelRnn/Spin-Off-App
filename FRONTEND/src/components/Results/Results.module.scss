@@ -1,11 +1,13 @@
 @use '../../sass/variables.scss' as *;
+@use '../../sass/mixins.scss' as *;
+
 .container{
   padding: 3rem 0;
   display: flex;
   flex-direction: column;
   width: $main-container-w;
   margin: 0 auto;
-  row-gap: 6rem;
+  row-gap: 5rem;
   
   .results_info{
     display: flex;
@@ -33,5 +35,8 @@
     @media screen and (max-width: 1300px) {
       grid-template-columns: 1fr;
     }
+  }
+  .return{
+    @include return-btn;
   }
 }

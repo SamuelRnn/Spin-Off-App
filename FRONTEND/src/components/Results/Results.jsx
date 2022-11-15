@@ -32,6 +32,7 @@ function Results({ setHomeSearchDone }) {
             <h2>Resultados para<span>{searchTitle}</span></h2>
             <div></div>
           </div>
+          <h3 className={styles.return} onClick={handleReturn}>Inicio</h3>
           <ul className={styles.results_container}>
             {
               movies.Search?.map(movie => 
@@ -39,13 +40,12 @@ function Results({ setHomeSearchDone }) {
                   key={movie.imdbID}
                   title={movie.Title}
                   year={movie.Year}
-                  id={movie.imdbID}
+                  movieId={movie.imdbID}
                   poster={movie.Poster}
                 />
               )
             }
           </ul>
-          <h2 onClick={handleReturn}>Return</h2>
         </>
       }
     </div>
