@@ -12,11 +12,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(getRandQuote())
-
-    return function(){
-      dispatch(getRandQuote(''))
-    }
-  },[])
+  },[searchDone])
 
   return (
     <>
