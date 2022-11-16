@@ -17,7 +17,6 @@ function SearchBar({ setSearchDone }) {
     setinputValue("");
     setSearchDone(true)
     dispatch(setSearchTitle(inputValue))
-    console.log('me envie')
   };
 
   return (

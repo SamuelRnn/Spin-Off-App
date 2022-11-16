@@ -1,16 +1,18 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route} from "react-router-dom";
 import Home from "./components/Home/Home";
+import Login from "./components/Register-Login/Login";
 import NavBar from "./components/NavBar/NavBar";
-import Results from './components/Results/Results'
+import Results from "./components/Results/Results";
+import Register from "./components/Register-Login/Register";
 function App() {
+
   return (
     <BrowserRouter>
-      <Route path="/">
-        <NavBar />
-      </Route>
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
+      <Route path="/" component={NavBar}/>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/results" component={Results} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Register} />
     </BrowserRouter>
   );
 }

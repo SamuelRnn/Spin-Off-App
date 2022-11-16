@@ -5,19 +5,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { resetMatchingMovies } from '../../redux/actions'
 import NotFound from './NotFound'
+import { useHistory } from 'react-router-dom'
 
 function Results({ setHomeSearchDone }) {
   const movies = useSelector(state => state.movies)
   const searchTitle = useSelector(state => state.search)
   const dispatch = useDispatch();
-
+  const history = useHistory()
   const [searchDone, setSearchDone] = useState(false)
   
   const handleReturn = () => {
-    setHomeSearchDone(false)
-    setTimeout(()=>{
-      dispatch(resetMatchingMovies())
-    },100)
+    dispatch(resetMatchingMovies())
+    history.push('/')
   }
 
   return (

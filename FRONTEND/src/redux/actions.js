@@ -52,12 +52,20 @@ export const resetMatchingMovies = () => {
   };
 };
 export const getRandQuote = (arg) => {
+  if(arg){
+    return {
+      type: GET_RAND_QUOTE,
+      payload: false,
+    }
+  }
   return function (dispatch) {
-    axios.get("https://movie-quote-api.herokuapp.com/v1/quote/").then((res) =>
-      dispatch({
-        type: GET_RAND_QUOTE,
-        payload: res.data,
-      })
-    );
+    setTimeout(()=>{
+      axios.get("https://movie-quote-api.herokuapp.com/v1/quote/").then((res) =>
+        dispatch({
+          type: GET_RAND_QUOTE,
+          payload: res.data,
+        })
+      )
+    },2000)
   };
 };

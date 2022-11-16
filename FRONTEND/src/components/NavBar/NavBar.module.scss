@@ -24,13 +24,12 @@
       column-gap: 2.4rem;
       display: flex;
       align-items: center;
-
       .logo{
         display: flex;
         align-items: center;
         border-right: 1px solid $green;
         border-left: 1px solid $green;
-        height: 40%;
+        height: 2rem;
         padding: 0 10px;
 
         h1{
@@ -41,7 +40,7 @@
       .left_links{
         display: flex;
         align-items: center;
-        column-gap: .3rem;
+        column-gap: .3rem;       
       }
       h2{
         font-size: $font-links;

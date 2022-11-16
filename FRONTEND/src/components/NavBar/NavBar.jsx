@@ -1,6 +1,6 @@
 import styles from "./NavBar.module.scss";
 import { NavLink, Link } from "react-router-dom";
-import { HiHeart } from "react-icons/hi";
+import { HiBookmark, HiUser, HiUserAdd } from "react-icons/hi";
 import { BsFillStarFill } from "react-icons/bs";
 import { IconContext } from "react-icons";
 
@@ -13,19 +13,29 @@ function NavBar() {
       <div className={styles.container}>
         <nav className={styles.nav}>
           <div className={styles.links}>
-            <div className={styles.logo}>
-              <h1>SPIN</h1>
-              <BsFillStarFill color="#097969" size={"3.2em"} style={{margin: "0 .2rem"}}/>
-              <h1>OFF</h1>
-            </div>
+            <NavLink to='/'>
+              <div className={styles.logo}>
+                <h1>SPIN</h1>
+                <BsFillStarFill color="#097969" size={"3.2em"} style={{margin: "0 .2rem"}}/>
+                <h1>OFF</h1>
+              </div>
+            </NavLink>
           </div>
           <div className={styles.links}>
-            <NavLink to={'favorites'} onClick={clickLinkHandler}>
+            <NavLink to={'favorites'}>
               <div className={styles.left_links}>
-                <HiHeart />
+                <HiBookmark />
                 <h2>My List</h2>
               </div>
             </NavLink>
+            {/*------------------------------------*/}
+            <NavLink to={'login'}>
+              <div className={styles.left_links}>
+                <HiUser/>
+                <h2>Login</h2>
+              </div>
+            </NavLink>
+            {/*------------------------------------*/}
           </div>
         </nav>
       </div>
