@@ -5,7 +5,6 @@ import {
   FAV_ADD_MOVIE,
   SET_SEARCH_TITLE,
   RESET_MATCHING_MOVIES,
-  GET_RAND_QUOTE
 } from "./actions";
 
 const initialState = {
@@ -13,7 +12,6 @@ const initialState = {
   search: '',
   favMovies: [],
   movieDetail: {},
-  randQuote: ''
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -26,8 +24,7 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, search: `"${action.payload}"`}
     case RESET_MATCHING_MOVIES:
       return { ...state, movies: []}
-    case GET_RAND_QUOTE:
-      return { ...state, randQuote: action.payload}
+
   }
 };
 export default rootReducer;

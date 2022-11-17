@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { HiInformationCircle } from "react-icons/hi";
 
 function MovieCard({ title, year, movieId, poster }) {
+  let posterSrc = poster === "N/A" ? 'https://cdn3.emoji.gg/emojis/3507_RainbowDancingCockroach.gif' : poster
   return (
     <li className={styles.container}>
       <div
         className={styles.img}
-        style={{ backgroundImage: "url(" + poster + ")" }}
+        style={{ backgroundImage: `url(${posterSrc})`}}
       ></div>
       <div className={styles.info}>
         <div>

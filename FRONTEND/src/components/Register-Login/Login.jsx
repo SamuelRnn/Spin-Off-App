@@ -1,6 +1,6 @@
 import styles from "./UserForms.module.scss";
 import { Link, useHistory } from "react-router-dom";
-import { validateLogin } from "./validations";
+import { validateLogin } from "../../services/validateLogin";
 import { useState } from "react";
 
 const Login = () => {
@@ -15,17 +15,25 @@ const Login = () => {
     setForm({
       ...form,
       [name]: value,
-      loginError: ''
+      loginError: "",
     });
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const validSubmit = await validateLogin(form);
+    let validSubmit;
+    try {
+      validSubmit = await validateLogin(form);
+    } catch (error) {
+      validSubmit = {
+        status: false,
+        message: "Unable to connect with the server, try again later.",
+      };
+    }
 
     if (validSubmit.status) {
       //dispatch(user{name: id})
       history.push("/");
-      console.log(validSubmit.user)
+      console.log(validSubmit.user);
     } else {
       setForm({
         ...form,
@@ -38,13 +46,11 @@ const Login = () => {
       <div className={styles.main_container}>
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
-          {
-            form.loginError ? (
-              <p className={`${styles.text} ${styles.invalid_text}`}>
-                {form.loginError}
-              </p>
-            ) : null
-          }
+          {form.loginError ? (
+            <p className={`${styles.text} ${styles.invalid_text}`}>
+              {form.loginError}
+            </p>
+          ) : null}
           <input
             className={form.loginError ? styles.invalid_field : undefined}
             onChange={handleChange}

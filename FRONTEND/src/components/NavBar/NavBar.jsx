@@ -5,18 +5,15 @@ import { BsFillStarFill } from "react-icons/bs";
 import { IconContext } from "react-icons";
 
 function NavBar() {
-  const clickLinkHandler = () => {
-    alert('Componente en desarrollo')
-  }
   return (
-    <IconContext.Provider value={{ size: "2.6em" }}>
+    <IconContext.Provider value={{ size: "2.4em" }}>
       <div className={styles.container}>
         <nav className={styles.nav}>
           <div className={styles.links}>
             <NavLink to='/'>
               <div className={styles.logo}>
                 <h1>SPIN</h1>
-                <BsFillStarFill color="#097969" size={"3.2em"} style={{margin: "0 .2rem"}}/>
+                <BsFillStarFill className={styles.star} color="#097969" size={"2.5em"} style={{margin: "0 .2rem"}}/>
                 <h1>OFF</h1>
               </div>
             </NavLink>

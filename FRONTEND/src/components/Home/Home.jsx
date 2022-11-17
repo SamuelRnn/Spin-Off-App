@@ -1,23 +1,24 @@
 import SearchBar from '../SearchBar/SearchBar'
-import Results from '../Results/Results';
 import styles from './Home.module.scss'
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getRandQuote } from '../../redux/actions'
 import { useHistory } from 'react-router-dom';
+import {getRandomQuote} from '../../services/getRandomQuote';
 
 function Home() {
   const [searchDone, setSearchDone] = useState(false)
-  const quote = useSelector(state => state.randQuote)
-  const dispatch = useDispatch()
+  const [quote, setQuote] = useState(false)
   let history = useHistory()
-
   useEffect(() => {
-    dispatch(getRandQuote())
-    return ()=>{
-      dispatch(getRandQuote(true))
-    }
-  },[searchDone])
+    getRandomQuote().then(res => {
+      setTimeout(()=>{
+        if(res.quote === '"ou can always be thinner, look better"'){
+          res.quote = '"You can always be thinner, look better"'
+        }
+        setQuote(res)
+      }, 1600)
+    })
+    return () => setQuote(false)
+  },[])
 
   return (
     <>

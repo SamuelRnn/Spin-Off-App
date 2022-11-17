@@ -1,7 +1,8 @@
 import styles from "./UserForms.module.scss";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
-import { validateRegister } from "./validations";
+import { validateRegister } from "../../services/validateRegister";
+
 const Register = () => {
   const history = useHistory();
   const [error, setError] = useState({

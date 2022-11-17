@@ -7,7 +7,7 @@
   position: fixed;
   border-bottom: $light-gray 1px solid;
   background-color: $gray;
-  height: 7.6rem;
+  height: 7.4rem;
   top: 0;
   box-shadow: 0 0 20px 15px $black ;
 
@@ -27,14 +27,20 @@
       .logo{
         display: flex;
         align-items: center;
-        border-right: 1px solid $green;
-        border-left: 1px solid $green;
-        height: 2rem;
-        padding: 0 10px;
-
+        height: 4rem;
         h1{
           font-size: $font-h1;
           font-family: $font-f-alt;
+          transition: .6s cubic-bezier(0.165, 0.84, 0.44, 1) all;
+        }
+        .star{
+          transition: .6s cubic-bezier(0.165, 0.84, 0.44, 1) all;
+        }
+        &:hover > .star{
+          transform: rotate(360deg) scale(1.2);
+        }
+        &:hover{
+          text-shadow: 0px 0px 7px $white;
         }
       }
       .left_links{
