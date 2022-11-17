@@ -23,7 +23,9 @@ const Login = () => {
     const validSubmit = await validateLogin(form);
 
     if (validSubmit.status) {
+      //dispatch(user{name: id})
       history.push("/");
+      console.log(validSubmit.user)
     } else {
       setForm({
         ...form,

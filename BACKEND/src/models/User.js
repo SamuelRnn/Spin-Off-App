@@ -12,6 +12,11 @@ const User = (database) => {
       allowNull: false,
       unique: true
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
+    },
     profile_picture: {
       type: DataTypes.STRING,
       allowNull: false

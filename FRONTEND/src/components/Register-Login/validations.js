@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const validateRegister = (inputName, value) => {
   if (inputName === "username") {
     const nameFormat = /^[a-zA-Z0-9_-]*$/;
@@ -54,14 +56,11 @@ export const validateRegister = (inputName, value) => {
     }
   }
 };
-
+const temporalHost = 'http://localhost:3001';
+//---------------------------------------------
 export const validateLogin = async ({ username, password }) => {
-  
-  return new Promise((resolve, reject) => {
-    setTimeout(()=>{resolve({
-      message: 'Incorrect Data: Check your username and password or register in the link down below',
-      status: false
-    })},4000)
+  const result = await axios.get(temporalHost+'/user',{
+    params: { username, password }
   })
-
+  return result.data
 }

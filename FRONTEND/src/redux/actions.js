@@ -65,7 +65,7 @@ export const getRandQuote = (arg) => {
           type: GET_RAND_QUOTE,
           payload: res.data,
         })
-      )
+      ).catch(err => {return})
     },1600)
   };
 };
