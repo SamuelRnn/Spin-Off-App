@@ -1,49 +1,67 @@
 export const validateRegister = (inputName, value) => {
-  if(inputName === 'username'){
+  if (inputName === "username") {
     const nameFormat = /^[a-zA-Z0-9_-]*$/;
-    if(nameFormat.test(value)){
+    if (nameFormat.test(value)) {
       return {
         error: false,
-        errorClass: 'valid_text',
-      }
+        errorClass: "valid_text",
+        userError: false,
+      };
     } else {
       return {
-        error: 'Current username format isn\'t allowed',
-        errorClass: 'invalid_text',
-      }
+        error: "Current username format isn't allowed",
+        errorClass: "invalid_text",
+        userError: true,
+      };
     }
   }
-  if(inputName === 'email'){
+  if (inputName === "email") {
     const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})*$/;
-    if(emailFormat.test(value)){
+    if (emailFormat.test(value)) {
       return {
-          error: false,
-          errorClass: 'valid_text',
-        }
+        error: false,
+        errorClass: "valid_text",
+        emailError: false,
+      };
     } else {
       return {
-        error: 'Write a valid email!',
-        errorClass: 'invalid_text',
-      }
+        error: "Write a valid email!",
+        errorClass: "invalid_text",
+        emailError: true,
+      };
     }
   }
-  if(inputName === 'password'){
+  if (inputName === "password") {
     const passFormat = /^[^\s]*$/;
-    if(!passFormat.test(value)){
+    if (!passFormat.test(value)) {
       return {
-        error: 'Don\'t use spaces!',
-        errorClass: 'invalid_text',
-      }
-    } else if(value.length < 8) {
+        error: "Don't use spaces!",
+        errorClass: "invalid_text",
+        passwordError: true,
+      };
+    } else if (value.length < 8) {
       return {
-        error: 'minimun length required!',
-        errorClass: 'invalid_text',
-      }
+        error: "minimun length required!",
+        errorClass: "invalid_text",
+        passwordError: true,
+      };
     } else {
       return {
         error: false,
-        errorClass: 'valid_text',
-      }
+        errorClass: "valid_text",
+        passwordError: false,
+      };
     }
   }
+};
+
+export const validateLogin = async ({ username, password }) => {
+  
+  return new Promise((resolve, reject) => {
+    setTimeout(()=>{resolve({
+      message: 'Incorrect Data: Check your username and password or register in the link down below',
+      status: false
+    })},4000)
+  })
+
 }

@@ -7,6 +7,9 @@ const Register = () => {
   const [error, setError] = useState({
     error: false,
     errorClass: 'valid_text',
+    userError: false,
+    emailError: false,
+    passwordError: false
   })
   const [form, setForm] = useState({
     username: '',
@@ -36,16 +39,16 @@ const Register = () => {
         <h2>Register</h2>
         <form onSubmit={handleSubmit}>
           <input
-            className={!error.error || styles.invalid_field}
-            maxLength='12'
+            className={error.userError ? styles.invalid_field : undefined}
+            maxLength='16'
             onChange={handleInputChange}
             name="username"
             type="text"
-            placeholder="Username (max. 12 characters, no spaces)"
+            placeholder="Username (max. 16 characters, no spaces)"
             value={form.username}
           />
           <input
-            className={!error.error || styles.invalid_field}
+            className={error.emailError ? styles.invalid_field : undefined}
             onChange={handleInputChange}
             name="email"
             type="email"
@@ -53,7 +56,7 @@ const Register = () => {
             value={form.email}
           />
           <input
-            className={!error.error || styles.invalid_field}
+            className={error.passwordError ? styles.invalid_field : undefined}
             onChange={handleInputChange}
             name="password"
             type="password"
@@ -63,7 +66,7 @@ const Register = () => {
           <p className={`${styles.text} ${styles[error.errorClass]}`}>
             {error.error || 'Make sure to fill all fields correctly'}
           </p>
-          <input disabled={!form.username || !form.password || !form.email} type="submit" value="Register" />
+          <input disabled={!form.username || !form.email || form.password.length < 8} type="submit" value="Register" />
         </form>
       </div>
     </div>

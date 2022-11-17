@@ -66,6 +66,6 @@ export const getRandQuote = (arg) => {
           payload: res.data,
         })
       )
-    },2000)
+    },1600)
   };
 };

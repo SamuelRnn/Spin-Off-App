@@ -1,16 +1,17 @@
 @use '../../sass/variables.scss' as *;
 @use '../../sass/mixins.scss' as *;
 $common-text-size: 1.5rem;
+$transition-form: .15s ease all;
 
 .page_container{
-  margin-top: 2rem;
-  background-color: $black;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
+  padding-bottom: 3rem;
 }
 .main_container{
   padding: 0 5rem;
-  width: min(54rem, 95%);
+  width: min(52rem, 95%);
   background-color: $gray;
   display: flex;
   flex-direction: column;
@@ -43,6 +44,7 @@ $common-text-size: 1.5rem;
       border: none;
       border-bottom: 3px solid $light-green;
       margin-bottom: 2rem;
+      transition: $transition-form;
     }
     input[type=submit]{
       border-radius: 2.6rem;
@@ -59,6 +61,7 @@ $common-text-size: 1.5rem;
       &:disabled{
         background-color: gray;
         pointer-events: none;
+        transition: $transition-form;
       }
     }
     p{
@@ -84,10 +87,13 @@ $common-text-size: 1.5rem;
 }
 .valid_text{
   color: $white;
+  transition: $transition-form;
 }
 .invalid_text{
-  color: red;
+  color: $red;
+  transition: $transition-form;
 }
 .invalid_field{
-  border-bottom: 3px solid red !important;
+  border-bottom: 3px solid $red !important;
+  transition: $transition-form;
 }

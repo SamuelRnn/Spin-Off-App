@@ -22,13 +22,13 @@ function NavBar() {
             </NavLink>
           </div>
           <div className={styles.links}>
-            <NavLink to={'favorites'}>
+            {/* <NavLink to={'favorites'}>
               <div className={styles.left_links}>
                 <HiBookmark />
                 <h2>My List</h2>
               </div>
-            </NavLink>
-            {/*------------------------------------*/}
+            </NavLink> */}
+            {/* ------------------------------------ */}
             <NavLink to={'login'}>
               <div className={styles.left_links}>
                 <HiUser/>
